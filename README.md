@@ -1,59 +1,107 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📚 Perpustakaan Digital (PerpusDigital)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistem Informasi Manajemen Perpustakaan berbasis web yang dibangun dengan framework **Laravel 12** dan **PHP 8.3**. Proyek ini dirancang untuk memenuhi kebutuhan digitalisasi perpustakaan dengan fitur sirkulasi buku yang lengkap, sistem denda otomatis, dan keamanan navigasi.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🛠️ Tech Stack
+* **Framework:** Laravel 12
+* **Database:** MySQL 8.4
+* **Language:** PHP 8.3
+* **Frontend:** Bootstrap 5 & Blade Templating
+* **Security:** Custom Middleware (PreventBackHistory)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ✨ Fitur Utama
+* **Multi-Role Authentication**: Hak akses berbeda untuk Administrator, Petugas, dan Peminjam.
+* **Dashboard Statistik**: Ringkasan data total transaksi, status buku, dan estimasi denda secara real-time.
+* **Manajemen Koleksi**: CRUD Buku dan Kategori Buku secara dinamis.
+* **Sirkulasi Buku**: Sistem peminjaman mandiri bagi user dengan filter tanggal.
+* **Fitur Cetak (Print)**: Laporan sirkulasi yang dioptimalkan untuk format cetak fisik (bersih dari navigasi).
+* **Security Guard**: Implementasi proteksi history browser untuk mencegah akses kembali setelah logout.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 📸 Preview Halaman
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Welcome Screen
+![Welcome Screen](https://github.com/user-attachments/assets/c083f9bc-5df8-4826-a559-892fb775a09b)
 
-## Laravel Sponsors
+### Interface Overview
+| Halaman Login | Koleksi Buku (Admin) |
+| :---: | :---: |
+| ![Login Page](https://github.com/user-attachments/assets/cd578be8-2e33-45a7-80c9-affe0acaa6a9) | ![Data Buku](https://github.com/user-attachments/assets/ee101bf0-8b71-4217-94a7-f8cb8e895cc3) |
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+| Laporan Peminjaman | Dashboard Peminjam |
+| :---: | :---: |
+| ![Laporan](https://github.com/user-attachments/assets/46a24c6a-5321-46fb-b812-36b98f93d5aa) | ![Dashboard](https://github.com/user-attachments/assets/e2b4b1db-0732-4231-87e6-322c7e8858d8) |
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 📂 Struktur Database
+Proyek ini menggunakan skema database relasional sebagai berikut:
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+* **`users`**: Mengelola data pengguna dan hak akses (`administrator`, `petugas`, `peminjam`).
+* **`bukus`**: Menyimpan detail buku, penulis, dan penerbit.
+* **`kategoribukus`**: Tabel referensi untuk kategori buku.
+* **`peminjamans`**: Mencatat setiap transaksi, tanggal deadline, dan status pengembalian.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## 🚀 Instalasi & Konfigurasi
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 1. Clone & Install
+```bash
+git clone [https://github.com/ReyGHz413/Perpustakaan.git](https://github.com/ReyGHz413/Perpustakaan.git)
+cd Perpustakaan
+composer install
+npm install && npm run dev
 
-## License
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 2. Konfigurasi Database
+
+* Buat database baru bernama `perpus` di MySQL.
+* Duplikat file `.env.example` menjadi `.env`.
+* Sesuaikan kredensial database Anda pada file `.env`.
+
+### 3. Import Data
+
+Gunakan file `perpus (2).sql` yang tersedia di root folder dan import ke database `perpus` Anda menggunakan phpMyAdmin atau command line:
+
+```bash
+mysql -u root -p perpus < "perpus (2).sql"
+
+```
+
+### 4. Menjalankan Aplikasi
+
+```bash
+php artisan key:generate
+php artisan serve
+
+```
+
+---
+
+## 🔑 Akun Uji Coba (Demo)
+
+| Role | Username | Password |
+| --- | --- | --- |
+| **Administrator** | `admin_perpus` | `password` |
+| **Petugas** | `sasa` | `password` |
+| **Peminjam** | `rey` | `password` |
+
+---
+
+## 📝 Catatan Penting
+
+* **Kalkulasi Denda**: Denda dihitung otomatis berdasarkan selisih hari keterlambatan dengan tarif **Rp 2.000/hari**.
+* **Fix View Error**: Jika muncul pesan `View not found`, jalankan perintah `php artisan view:clear` dan `php artisan route:clear`.
+
+---
+
+**Developed by [ReyGHz413**](https://www.google.com/search?q=https://github.com/ReyGHz413)
